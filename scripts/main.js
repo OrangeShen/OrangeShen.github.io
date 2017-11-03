@@ -1,21 +1,37 @@
 'use strict'
 
-var correct = 0;
-var answer = "";
+var UP = {};
+var div = document.getElementById("div");
+var username = document.getElementById("username");
+var passwd = document.getElementById("passwd");
+var warn = document.getElementById("warning")
+var signin = document.getElementById("button").firstElementChild;
+var signup = document.getElementById("button").lastElementChild;
 
-var QA = {
-    "what's the name of apple's funder?": "Steve Jobs",
-    "what's the capital of zhejiang province?": "hangzhou",
-    "what's the capital of US?": "New york",
-    "which city held the 29th Olympic games?": "Beijing"
-};
+warn.innerText = "if you haven't sign up,enter your username and password and click sign up. if you already signed up, use your username and password to sign up.";
 
-for(var item in QA){
-    answer = prompt(item);
-    if (answer.toLowerCase() == QA[item].toLowerCase()) {
-        correct++;
+signin.onclick = function() {
+    var uv = username.value;
+    var pv = passwd.value;
+    if (UP.hasOwnProperty(uv)) {
+        if (UP[uv] == pv) {
+            warn.innerText = "login success!";
+            
+        }else {
+            warn.innerText = "wrong password";
+        }
+    }else {
+        warn.innerText = "you haven't sign up yet";
     }
 }
 
-
-alert("you anwsered " + correct + " questions right");
+signup.onclick = function() {
+    if (!UP.hasOwnProperty(uv)) {
+        var uv = username.value;
+        var pv = passwd.value;
+        UP[uv] = pv;
+        warn.innerText = "sign up successfully!";
+    }else {
+        warn.innerText = "you have already signed up";
+    }
+}

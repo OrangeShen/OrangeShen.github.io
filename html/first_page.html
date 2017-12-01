@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dog or not</title>
+    <link rel="stylesheet" type="text/css" href="../css/dog.css">
+</head>
+<header>
+        <h1>dog or not?!</h1>
+        <nav>
+            <ul>
+                <li>DOGS</li>
+                <li>NOT DOGS</li>
+                <li>MAYBE DOGS</li>
+            </ul>
+        </nav>
+    </header>
+<body>
+
+    <h2>dog or not?</h2>
+    <div id="show"></div>
+    <script type="text/handlebars" id="template">
+        {{#each dogs}}
+            <div class="container">
+                <div class="gallery" style="background-image: url({{this.img}});">
+                    <p id="name">{{this.name}}</p>
+                </div>
+                <div class="interaction">
+                    <button class="isdog">DOG</button>
+                    <button class="notdog">NOT</button>
+                    {{#if isDogClicked}}
+                        {{#if this.flag}}
+                        <span class="correct">Correct</span>
+                        {{else}}
+                        <span class="wrong">Try Again</span>
+                        {{/if}}
+                    {{/if}}
+                    {{#if notDogClicked}}
+                        {{#if this.flag}}
+                        <span class="correct">Correct</span>
+                        {{else}}
+                        <span class="wrong">Try Again</span>
+                        {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+        {{/each}}
+    </script>
+    
+</body>
+<footer>
+    <ul>
+        <li id="page_one">1</li>
+        <li id="page_two">2</li>
+        <li id="pagethree">3</li>
+    </ul>
+</footer>
+
+<script type="text/javascript" src="../scripts/handlebars.min.js">
+</script>
+<script type="text/javascript" src="../scripts/dog.js"></script>
+</html>

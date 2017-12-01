@@ -1,43 +1,55 @@
 
-html {
+html
+{
     background-image: url(../images/ad.jpg);
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
 }
-div {
-    text-align: center;
+div
+{
     margin-top: 200px;
+
+    text-align: center;
 }
 
-div h1 {
+div h1
+{
     font-size: 40px;
 }
 
-button {
+button
+{
     width: 100px;
     height: 30px;
-    background-color: black;
+
     color: white;
-    border:none;
+    border: none;
     border-radius: 10px;
+    background-color: black;
 }
 
-button:hover {
-    background-color: #DDDDDD;
+button:hover
+{
     color: black;
+    background-color: #ddd;
 }
 
-input {
+input
+{
     outline: none;
 }
 
-#warning {
-    color: #A25600;
-    text-align: center;
-    margin-top: 200px;
+#warning
+{
     font-size: 30px;
     font-weight: bold;
+
     width: 1000px;
     margin: 0 auto;
+    margin-top: 200px;
     margin-top: 100px;
+
+    text-align: center;
+
+    color: #a25600;
 }

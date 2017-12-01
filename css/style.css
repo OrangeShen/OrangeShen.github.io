@@ -1,88 +1,124 @@
-*{
-	margin: 0;
-	padding: 0;
+*
+{
+    margin: 0;
+    padding: 0;
 }
 
-body {
-	background-image: url(../images/bg.png);
-	background-size: cover;
-	background-repeat: no-repeat;
+body
+{
+    background-image: url(../images/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-header {
-	background-color: #2E3E44;
-	height: 80px;
-	line-height: 20px;
+header
+{
+    line-height: 20px;
+
+    height: 80px;
+
+    background-color: #2e3e44;
 }
 
-header h1 {
-	width: 20%;
-	float: left;
+header h1
+{
+    float: left;
+
+    width: 20%;
 }
 
-header h1 a img {
-	width: 40px;
-	margin-top: 20px;
-	margin-left: 30px;
+header h1 a img
+{
+    width: 40px;
+    margin-top: 20px;
+    margin-left: 30px;
 }
 
-header nav ul {
-	list-style: none;
-	float: right;
-	margin-top: 5px;
+header nav ul
+{
+    float: right;
+
+    margin-top: 5px;
+
+    list-style: none;
 }
 
-header nav ul li {
-	display: inline-block;
-	color: white;
-	font-weight: lighter;
-	font-family: sans-serif;
-	font-size: 12px;
-	margin: 10px;
-	line-height: 3rem;
+header nav ul li
+{
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: lighter;
+    line-height: 3rem;
+
+    display: inline-block;
+
+    margin: 10px;
+
+    color: white;
 }
 
-header nav ul li:last-child {
-	margin-right: 80px;
+a:link, a:visited {
+    text-decoration: none;
+    color: #fff;
 }
 
-main {
-	text-align: center;
+header nav ul li:last-child
+{
+    margin-right: 80px;
 }
 
-main img {
-	margin-top: 60px;
-	margin-bottom: 40px;
+main
+{
+    text-align: center;
 }
 
-main h1 {
-	color: white;
-	font-size: 3.5rem;
-	font-weight: lighter;
-	font-family: serif;
-	letter-spacing: 3px;
-	margin-bottom: 30px;
+body main a img
+{
+    margin-left: 200px;
+    margin-top: 100px;
+    margin-bottom: 60px;
 }
 
-main p {
-	color: #ADBFC5;
-	font-size: 1.4rem;
-	font-weight: lighter;
-	font-family: sans-serif;
-	line-height: 1.8rem;
-	text-align: center;
+main h1
+{
+    font-family: serif;
+    font-size: 3.5rem;
+    font-weight: lighter;
+
+    margin-bottom: 30px;
+
+    letter-spacing: 3px;
+
+    color: white;
 }
 
-footer {
-	text-align: center;
-	color: white;
-	font-family: sans-serif;
-	font-weight: lighter;
-	margin-top: 700px;
-	margin-bottom: 60px;
-	font-size: 12px;
+main p
+{
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    font-weight: lighter;
+    line-height: 1.8rem;
+
+    text-align: center;
+
+    color: #adbfc5;
 }
 
-footer a {
-	color: white;
+footer
+{
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: lighter;
+
+    margin-top: 700px;
+    margin-bottom: 60px;
+
+    text-align: center;
+
+    color: white;
+}
+
+footer a
+{
+    color: white;
 }

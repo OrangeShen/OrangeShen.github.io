@@ -2,6 +2,7 @@ var canvas = document.getElementById("test-canvas");
 var color = document.getElementById("color");
 var width = document.getElementById("width");
 var clear = document.getElementById("clear");
+var erase = document.getElementById("erase");
 var ctx = canvas.getContext('2d');
 var mouse_old = {x:0, y:0};
 var mouse = {x:0, y:0};
@@ -15,6 +16,9 @@ width.addEventListener('change', function(){
 });
 clear.addEventListener('click', function(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
+});
+erase.addEventListener('click', function(){
+    eraser();
 });
 canvas.addEventListener('mousedown', function(e) {
     draw('down');
@@ -46,6 +50,38 @@ function draw(flag){
     ctx.stroke();
     }
 }
+// eraser
+canvas.addEventListener('mousedown', function(e) {
+    eraser('down');
+});
+canvas.addEventListener('mousemove', function(e) {
+    mouse_old.x = mouse.x;
+    mouse_old.y = mouse.y;
+    mouse.x = e.clientX-this.offsetLeft;
+    mouse.y = e.clientY-this.offsetTop;
+    eraser('move');
+});
+canvas.addEventListener('mouseup', function(e) {
+    eraser('up');
+});
+canvas.addEventListener('mouseleave', function(e){
+    eraser('up');
+});
+function eraser(flag){
+    if (flag == 'down') {
+        erase = true;
+    }else if(flag == 'up'){
+        erase = false;
+    }
+    
+    if (erase) {
+    ctx.beginPath();
+    ctx.moveTo(mouse_old.x, mouse_old.y);
+    ctx.lineTo(mouse.x, mouse.y);
+    ctx.clearRect(mouse.x, mouse.y, 5, 5);
+    }
+}
+
 /*
 ctx.moveTo(100,100);
 ctx.lineTo(300,100);

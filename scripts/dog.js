@@ -32,8 +32,9 @@ show.innerHTML = compiled(data);
 function clickIsButton() {
     for (let i = 0; i < btn_isdog.length; i++) {
         btn_isdog[i].onclick = function() {
-            data.dogs[i].isDogClicked =false;
-            data.dogs[i].notDogClicked = true;
+            data.dogs[i].isDogClicked =true;
+            data.dogs[i].notDogClicked = false;
+            data.dogs[i].isClicked = true;
             show.innerHTML = compiled(data);
             clickIsButton();
             clickNotButton();
@@ -44,8 +45,9 @@ function clickIsButton() {
 function clickNotButton() {
     for (let i = 0; i < btn_notdog.length; i++) {
         btn_notdog[i].onclick = function() {
-            data.dogs[i].isDogClicked =true;
-            data.dogs[i].notDogClicked = false;
+            data.dogs[i].isDogClicked =false;
+            data.dogs[i].notDogClicked = true;
+            data.dogs[i].isClicked = true;
             show.innerHTML = compiled(data);
             clickIsButton();
             clickNotButton();

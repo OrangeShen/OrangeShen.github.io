@@ -62,10 +62,11 @@ body h2
     font-size: 50px;
     font-weight: normal;
     text-align: center;
-    /*line-height: 5rem;*/
+    line-height: 5.6rem;
 }
 
 .container {
+    height: 310px;
     display: inline-block;
     box-shadow: 0 0 4px #ccc;
     margin-bottom: 15px;
@@ -74,6 +75,10 @@ body h2
 .gallery {
     width: 300px;
     height: 276px;
+}
+
+.interaction {
+    height: 35px;
 }
 
 button
@@ -99,19 +104,20 @@ button:hover
 .correct {
     font-family: sans-serif;
     font-size: 14px;
-    /*line-height: 2rem;*/
+    line-height: 2rem;
     color: green;
 }
 
 .wrong {
     font-family: sans-serif;
     font-size: 14px;
-    /*line-height: 2rem;*/
+    line-height: 2rem;
     color: red;
 }
 
 #show {
     text-align: center;
+    height: 700px;
 }
 #name {
     float: left;

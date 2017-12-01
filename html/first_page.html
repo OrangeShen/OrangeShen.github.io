@@ -28,18 +28,20 @@
                 <div class="interaction">
                     <button class="isdog">DOG</button>
                     <button class="notdog">NOT</button>
-                    {{#if isDogClicked}}
-                        {{#if this.flag}}
-                        <span class="correct">Correct</span>
-                        {{else}}
-                        <span class="wrong">Try Again</span>
+                    {{#if isClicked}}
+                        {{#if isDogClicked}}
+                            {{#if this.flag}}
+                            <span class="correct">Correct</span>
+                            {{else}}
+                            <span class="wrong">Try Again</span>
+                            {{/if}}
                         {{/if}}
-                    {{/if}}
-                    {{#if notDogClicked}}
-                        {{#if this.flag}}
-                        <span class="correct">Correct</span>
-                        {{else}}
-                        <span class="wrong">Try Again</span>
+                        {{#if notDogClicked}}
+                            {{#if this.flag}}
+                            <span class="wrong">Try Again</span>
+                            {{else}}
+                            <span class="correct">Correct</span>
+                            {{/if}}
                         {{/if}}
                     {{/if}}
                 </div>

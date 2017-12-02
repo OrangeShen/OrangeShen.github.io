@@ -50,18 +50,12 @@ var third_data = {
     ]
 };
 
-var dog_data = {
-    dogs: []
-};
+//empty object set for classification
+var dog_data = {dogs: [] };
+var notDog_data = {dogs: [] };
+var maybeDog_data = {dogs: [] };
 
-var notDog_data = {
-    dogs: []
-};
-
-var maybeDog_data = {
-    dogs: []
-};
-
+//initialization
 var compiled = Handlebars.compile(template);
 show.innerHTML = compiled(data);
 
@@ -70,17 +64,10 @@ function clickFirstPage() {
     function clickIsButton() {
         for (let i = 0; i < btn_isdog.length; i++) {
             btn_isdog[i].onclick = function() {
-                
                 data.dogs[i].isDogClicked =true;
                 data.dogs[i].notDogClicked = false;
                 data.dogs[i].isClicked = true;
                 show.innerHTML = compiled(data);
-                if (data.dogs[i].flag == true) {
-                    dog_data.dogs.push(data.dogs[i]);
-                }else {
-                    notDog_data.dogs.push(data.dogs[i]);
-                }
-                
                 clickIsButton();
                 clickNotButton();
             };
@@ -90,17 +77,10 @@ function clickFirstPage() {
     function clickNotButton() {
         for (let i = 0; i < btn_notdog.length; i++) {
             btn_notdog[i].onclick = function() {
-                
                 data.dogs[i].isDogClicked =false;
                 data.dogs[i].notDogClicked = true;
                 data.dogs[i].isClicked = true;
                 show.innerHTML = compiled(data);
-                if (data.dogs[i].flag == true) {
-                    dog_data.dogs.push(data.dogs[i]);
-                }else {
-                    notDog_data.dogs.push(data.dogs[i]);
-                }
-
                 clickIsButton();
                 clickNotButton();
             };
@@ -120,11 +100,7 @@ function clickSecondPage() {
                 second_data.dogs[i].notDogClicked = false;
                 second_data.dogs[i].isClicked = true;
                 show.innerHTML = compiled(second_data);
-                if (second_data.dogs[i].flag == true) {
-                    dog_data.dogs.push(second_data.dogs[i]);
-                }else {
-                    notDog_data.dogs.push(second_data.dogs[i]);
-                }
+                
                 clickIsButton();
                 clickNotButton();
             };
@@ -138,11 +114,7 @@ function clickSecondPage() {
                 second_data.dogs[i].notDogClicked = true;
                 second_data.dogs[i].isClicked = true;
                 show.innerHTML = compiled(second_data);
-                if (second_data.dogs[i].flag == true) {
-                    dog_data.dogs.push(second_data.dogs[i]);
-                }else {
-                    notDog_data.dogs.push(second_data.dogs[i]);
-                }
+                
                 clickIsButton();
                 clickNotButton();
             };
@@ -161,11 +133,7 @@ function clickThirdPage() {
                 third_data.dogs[i].notDogClicked = false;
                 third_data.dogs[i].isClicked = true;
                 show.innerHTML = compiled(third_data);
-                if (third_data.dogs[i].flag == true) {
-                    dog_data.dogs.push(third_data.dogs[i]);
-                }else {
-                    notDog_data.dogs.push(third_data.dogs[i]);
-                }
+                
                 clickIsButton();
                 clickNotButton();
             };
@@ -179,11 +147,7 @@ function clickThirdPage() {
                 third_data.dogs[i].notDogClicked = true;
                 third_data.dogs[i].isClicked = true;
                 show.innerHTML = compiled(third_data);
-                if (third_data.dogs[i].flag == true) {
-                    dog_data.dogs.push(third_data.dogs[i]);
-                }else {
-                    notDog_data.dogs.push(third_data.dogs[i]);
-                }
+                
                 clickIsButton();
                 clickNotButton();
             };
@@ -194,10 +158,42 @@ function clickThirdPage() {
 }
 
 function isDogs() {
+    dog_data.dogs = [];
+    for(let i = 0; i < data.dogs.length; i++) {
+        if (data.dogs[i].isDogClicked == true && data.dogs[i].flag == true) {
+             dog_data.dogs.push(data.dogs[i]);
+        }
+    }
+    for(let i = 0; i < second_data.dogs.length; i++) {
+        if (second_data.dogs[i].isDogClicked == true && second_data.dogs[i].flag == true) {
+            dog_data.dogs.push(second_data.dogs[i]);
+        }
+    }
+    for(let i = 0; i < third_data.dogs.length; i++) {
+        if (third_data.dogs[i].isDogClicked == true && third_data.dogs[i].flag == true) {
+            dog_data.dogs.push(third_data.dogs[i]);
+        }
+    }
     show.innerHTML = compiled(dog_data);
 }
 
 function notDogs() {
+    notDog_data.dogs = [];
+    for(let i = 0; i < data.dogs.length; i++) {
+        if (data.dogs[i].notDogClicked == true && data.dogs[i].flag == false) {
+             notDog_data.dogs.push(data.dogs[i]);
+        }
+    }
+    for(let i = 0; i < second_data.dogs.length; i++) {
+        if (second_data.dogs[i].notDogClicked == true && second_data.dogs[i].flag == false) {
+            notDog_data.dogs.push(second_data.dogs[i]);
+        }
+    }
+    for(let i = 0; i < third_data.dogs.length; i++) {
+        if (third_data.dogs[i].notDogClicked == true && third_data.dogs[i].flag == false) {
+            notDog_data.dogs.push(third_data.dogs[i]);
+        }
+    }
     show.innerHTML = compiled(notDog_data);
 }
 
@@ -218,13 +214,6 @@ function maybeDogs() {
             maybeDog_data.dogs.push(third_data.dogs[i]);
         }
     }
-    // for(let i = 0; i < maybeDog_data.dogs.length; i++) {
-    //     for (let j = 1; j < maybeDog_data.dogs.length-1; j++) {
-    //         if (maybeDog_data.dogs[i].name == maybeDog_data.dogs[j].name) {
-    //             maybeDog_data.dogs.pop(maybeDog_data.dogs[j]+1);
-    //         }
-    //     }
-    // }
     show.innerHTML = compiled(maybeDog_data);
 }
 

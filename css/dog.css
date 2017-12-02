@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+a:link, a:visited {
+    text-decoration: none;
+}
+
 header
 {
     line-height: 20px;
@@ -56,6 +60,10 @@ header nav ul li:last-child
     margin-right: 60px;
 }
 
+header nav ul li a:visited, a:link {
+    color: white;
+}
+
 body h2
 {
     font-family: sans-serif;
@@ -69,7 +77,9 @@ body h2
     height: 310px;
     display: inline-block;
     box-shadow: 0 0 4px #ccc;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    margin-left: 5px;
+    position: relative;
 }
 
 .gallery {
@@ -101,8 +111,13 @@ button:hover
     background-color: #ddd;
 }
 
+button:after {
+    background-color: #bbb;
+}
+
 .correct {
     font-family: sans-serif;
+    margin-left: 70px;
     font-size: 14px;
     line-height: 2rem;
     color: green;
@@ -110,14 +125,17 @@ button:hover
 
 .wrong {
     font-family: sans-serif;
+    margin-left: 70px;
     font-size: 14px;
     line-height: 2rem;
     color: red;
 }
 
 #show {
-    text-align: center;
-    height: 700px;
+    /*text-align: center;*/
+    margin-left: 80px;
+    display: flex;
+    flex-wrap: wrap;
 }
 #name {
     float: left;
@@ -132,9 +150,10 @@ footer
 {
     float: right;
 
-    margin-right: 50px;
+    margin-right: 70px;
+
 }
-footer ul li {
+footer ul a li {
     display: inline-block;
     font-family: sans-serif;
 
@@ -143,6 +162,4 @@ footer ul li {
     color: #ff327b;
 }
 
-a:link, a:visited {
-    text-decoration: none;
-}
+
